@@ -8,7 +8,7 @@ const myImage = document.querySelector("img");
 myImage.onclick = () => {
 	const mySrc = myImage.getAttribute("src");
 	if (mySrc === "images/METRO_CN.jpg") {
-		myImage.setAttribute("src", "images/fresh.jpg");
+		myImage.setAttribute("src", "images/METRO_CC.JPG");
 	} else {
 		myImage.setAttribute("src", "images/METRO_CN.jpg");
 	}	
@@ -43,4 +43,5 @@ if (!localStorage.getItem("name")) {
 myButton.onclick = function() {
 	setUserName();
 }
+
 
