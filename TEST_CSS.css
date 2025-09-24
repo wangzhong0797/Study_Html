@@ -1,0 +1,69 @@
+
+/* 
+微软属性列表：https://learn.microsoft.com/zh-cn/previous-versions/visualstudio/design-tools/expression-studio-3/ee371191(v=expression.30)
+ */
+
+html {
+  background-color: #FAFAFA;
+}
+
+img {
+  display: block;
+	margin: 0 auto;
+	width: 200px;
+	height: 100px;
+	overflow: auto;  
+}
+
+
+h3 {
+	color: red;	
+	background-color: yellow;
+	width: 500px;
+	border: 1px solid black;
+	border-style: dashed;
+}
+
+h1,h2,ul {
+	color: blue;
+	text-align: left;
+}
+
+/* p=段落 */
+p {
+	font-family: Arial;
+	font-size: 20px;
+	border: 1px solid black;
+	line-height: 1.2; /* 行间距 */
+	letter-spacing: 1px; /* 字间距 */ 
+	text-shadow: 3px 2px 3px black; 
+	/* text-shadow 对元素的文本内容施加阴影。它的四个值是：
+	第一个像素值设置阴影与文本的水平偏移量：阴影水平方向移动的距离（译者注：向右为正值）。
+	第二个像素值设置阴影与文本的垂直偏移量：阴影垂直方向移动的距离（译者注：向下为正值）。
+	第三个像素值设置阴影的模糊半径。值越大产生的阴影越模糊。
+	第四个值设置阴影的基色。 */
+
+}
+
+body {
+	font-family: sans-serif;
+	width: 600px;
+	background-color: #FEF3EB;
+	margin: 0 auto;  /* 外边距 */
+	border: 5px solid black;  /* 外边框 */
+	padding: 0 20px 20px 20px;  /* 内边框 */
+}
+
+/* strong=加粗 */
+strong {
+	color: red;
+	background-color: yellow;
+	font-size: 20px; /* px 表示“像素（pixel）”: 基础字号为 10 像素 */
+}
+
+/* em=斜体 */
+em {
+	color: green;
+	font-size: 130%;
+	font-family: arial;
+}
