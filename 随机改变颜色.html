@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>随机改变颜色</title>
+
+
+<!-- 加载 Tailwind CSS 框架的核心功能
+使页面能够识别和使用 Tailwind 的各种工具类（如 bg-yellow-500、w-64、flex 等） 
+	<script src="https://cdn.tailwindcss.com"></script> 
+-->
+<!-- 引入 Font Awesome 图标库后，就可以在页面中使用其提供的各种图标。 引入该样式表后，你可以通过添加特定的 class（如 fa + 图标名称）来在页面中显示各种矢量图标，这些图标可以像文字一样被样式化（修改颜色、大小等）。
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+-->
+
+    <style>
+        /* 页面样式 */
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+        
+        /* 颜色框样式 */
+        #colorBox {
+            width: 256px;
+            height: 256px;
+            background-color: blue; /* #FFFF00;  黄色 */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 使用Flexbox布局 */
+            display: flex;
+            /* 垂直方向从上到下排列 */
+            flex-direction: column;
+            /* 水平居中对齐 */
+            align-items: center;
+            /* 顶部对齐，居中对齐用center*/
+            justify-content: center;
+            /* 顶部留出一些间距
+            padding-top: 20px; 	 */
+            transition: background-color 0.3s ease;
+        }
+
+        /* 新增文字样式 */
+        #boxText {
+            margin-bottom: 20px; /* 与按钮保持距离 */
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: white;
+        }
+        
+        /* 按钮样式 */
+        #toggleButton {
+            background-color: white;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 24px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        #toggleButton:hover {
+            background-color: gray; <!-- #f5f5f5; -->
+        }
+        
+        /* 按钮图标 */
+        .icon {
+            width: 16px;
+            height: 16px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23333' d='M304 32c0-17.67-14.33-32-32-32s-32 14.33-32 32v128c0 17.67 14.33 32 32 32s32-14.33 32-32V32zm160 128c0-17.67-14.33-32-32-32H288c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h144c17.67 0 32-14.33 32-32V160zM160 64C71.63 64 0 135.6 0 224s71.63 160 160 160 160-71.63 160-160S248.4 64 160 64zm0 224c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z'/%3E%3C/svg%3E");
+			overflow: visible;  
+        }
+
+	</style>
+</head>
+
+<body>
+    <!-- 颜色框 -->
+    <div id="colorBox">
+        <div id="boxText">点击按钮随机更换颜色</div>
+        <!-- 切换按钮 -->
+        <button id="toggleButton">
+            <span class="icon"></span>
+            <span>切换颜色</span>
+        </button>
+    </div>
+		
+	<script>
+    // 获取元素
+	const colorBox = document.getElementById('colorBox');
+	const toggleButton = document.getElementById('toggleButton');
+	const boxText = document.getElementById('boxText');
+	
+	
+	function random(number) {
+		return Math.floor(Math.random() * (number + 1));
+	}
+
+	toggleButton.addEventListener('click', () => {
+		const rndCol = `RGB(${random(255)}, ${random(255)}, ${random(255)})`;
+		colorBox.style.backgroundColor = rndCol;
+		//toggleButton.innerHTML = `<span class="icon"></span><span>已切换成</span>${rndCol}`;
+		boxText.textContent = rndCol;
+	
+	});
+
+
+/*
+	const btn = document.querySelector("button");
+	
+	function random(number) {
+		return Math.floor(Math.random() * (number + 1));
+	}
+	
+	btn.addEventListener("click", () => {
+		const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+		document.body.style.backgroundColor = rndCol;
+		btn.textContent = rndCol;
+	});
+*/
+	</script>
+</body>
+</html>
